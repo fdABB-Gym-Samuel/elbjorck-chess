@@ -2,16 +2,16 @@ use std::{pin, process::id};
 
 #[derive(Copy, Clone)]
 pub struct Board {
-    boards: [u64; 12],
-    w_enpesant: u64,
-    b_enpesant: u64,
-    w_l_rook_moved: bool,
-    w_r_rook_moved: bool,
-    w_k_moved: bool,
-    b_l_rook_moved: bool,
-    b_r_rook_moved: bool,
-    b_k_moved: bool,
-    white_turn: bool,
+    pub boards: [u64; 12],
+    pub w_enpesant: u64,
+    pub b_enpesant: u64,
+    pub w_l_rook_moved: bool,
+    pub w_r_rook_moved: bool,
+    pub w_k_moved: bool,
+    pub b_l_rook_moved: bool,
+    pub b_r_rook_moved: bool,
+    pub b_k_moved: bool,
+    pub white_turn: bool,
 }
 
 impl Board {
@@ -2475,4 +2475,3 @@ mod tests {
         assert_eq!(true, Board::is_mate_white(&board));
     }
 }
-
