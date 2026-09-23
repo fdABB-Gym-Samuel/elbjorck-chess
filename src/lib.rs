@@ -322,7 +322,7 @@ impl Board {
             return false;
         }
 
-        self.white_turn = !self.white_turn;
+        
 
         if Board::piece_type_on_position(self, 0) != Board::W_ROOKS as isize {
             self.w_l_rook_moved = true;
@@ -377,6 +377,7 @@ impl Board {
             println!("Moving piece");
             self.boards[piece_type as usize] += end_board;
             self.boards[piece_type as usize] = self.boards[piece_type as usize] & !start_board;
+            self.white_turn = !self.white_turn;
 
             for i in 0..self.boards.len() {
                 if i != piece_type as usize {
